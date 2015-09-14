@@ -1,15 +1,19 @@
 #!/bin/sh
 
+cd # Stopping the error shell-init
+
 START=1003
 END=1089
 
-curl --silent -o ~/.background-image.jpg https://www.gstatic.com/prettyearth/assets/full/$(( RANDOM % ($START - $END + 1) + $START)).jpg
+curl --silent -o ~/.background-image-temp.jpg https://www.gstatic.com/prettyearth/assets/full/$(( RANDOM % ($START - $END + 1) + $START)).jpg
 
-while grep -q "an error" ~/.background-image.jpg
+while grep -q "an error" ~/.background-image-temp.jpg
 do
 	sleep 5
-	curl --silent -o ~/.background-image.jpg https://www.gstatic.com/prettyearth/assets/full/$(( RANDOM % ($START - $END + 1) + $START)).jpg
+	curl --silent -o ~/.background-image-temp.jpg https://www.gstatic.com/prettyearth/assets/full/$(( RANDOM % ($START - $END + 1) + $START)).jpg
 done
+
+mv ~/.background-image-temp.jpg ~/.background-image.jpg	#Only change background image when a valid one has been downloaded
 
 #XFCE4 
 case $XDG_CURRENT_DESKTOP in
