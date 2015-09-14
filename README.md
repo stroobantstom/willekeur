@@ -5,7 +5,7 @@ Change the wallpaper to a random Google Earth View on Arch Linux with XFCE 4. It
 
 ### Using the AUR package manager
 
-	$ yaourt -S --noconfirm willekeur
+	$ yaourt -S --noconfirm willekeur-git
 
 ### Cloning this repository
 
@@ -27,7 +27,7 @@ I am assuming you are using a bash shell so just edit your .bashrc by adding a c
 
 or do it the easy way and just do
 
-	echo ". /usr/bin/willekeur" >> ~/.bashrc
+	echo ". /usr/bin/willekeur &" >> ~/.xinitrc
 ## Supported desktop managers
 
 - XFCE4 with xconf-query

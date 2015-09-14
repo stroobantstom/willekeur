@@ -9,7 +9,7 @@ curl --silent -o ~/.background-image-temp.jpg https://www.gstatic.com/prettyeart
 
 while grep -q "an error" ~/.background-image-temp.jpg
 do
-	sleep 5
+	sleep 1
 	curl --silent -o ~/.background-image-temp.jpg https://www.gstatic.com/prettyearth/assets/full/$(( RANDOM % ($START - $END + 1) + $START)).jpg
 done
 
